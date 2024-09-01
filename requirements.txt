@@ -4,3 +4,4 @@ psycopg2
 python-dotenv
 flask-cors
 sqlalchemy-utils
+flask_migrate

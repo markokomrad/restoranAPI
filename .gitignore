@@ -1,0 +1,6 @@
+# dependencies
+node_modules/
+http.http
+.env
+coverage/
+build/

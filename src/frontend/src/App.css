@@ -13,6 +13,7 @@
   }
 }
 
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -21,7 +22,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
@@ -35,4 +36,213 @@
   to {
     transform: rotate(360deg);
   }
+} 
+
+.page-login {
+  background-color: #f7fafc;
+  background-image: url('restoran3.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-direction: row;
+}
+
+.left-side {
+  width: 50%;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.description {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: white;
+}
+
+.right-side {
+  width: 30%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+}
+
+.button {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.login-button {
+  background-color: #1877f2;
+  color: #ffffff;
+}
+
+.create-account-button {
+  background-color: #42b72a;
+  color: #ffffff;
+}
+
+.forgot-password {
+  color: #1877f2;
+  font-size: 0.875rem;
+}
+
+.divider {
+  margin: 1rem 0;
+}
+
+.additional-info {
+  font-size: 0.875rem;
+}
+
+.create-page {
+  color: #000000;
+}
+
+.go-back {
+  position: relative;
+  top: -15px;
+  color: #1877f2;
+  font-size: 0.875rem;
+}
+
+.container-forgotten-password {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.center-forgotten-password {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-group-forgotten-password {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.right-side-forgotten-password {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.for-pas {
+  position: relative;
+  top: -10px;
+  font-size: 0.875rem;
+}
+
+.right-side-confirm-password {
+  width: 400px;
+  height: 345px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.menu-page {
+  background-color: #f7fafc;
+  background-image: url('restoran3.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.your-text-class {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 40px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.heading-menu {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff6347;
+}
+
+.header {
+  display: flex;
+  justify-content: center; /* Poravnavanje dugmadi levo */
+  gap: 10px; /* Razmak između dugmadi */
+  padding: 20px; /* Padding za prostor oko dugmadi */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8); /* Pozadina sa providnošću ako je potrebno */
+}
+
+.header button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Možete promeniti boju */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.header button:hover {
+  background-color: #0056b3; /* Tamnija nijansa boje pri hoveru */
+}
+
+.logout-button {
+  position: absolute;
+  top: 20px; /* Pomeranje malo ispod gornje ivice */
+  right: 20px; /* Pomeranje malo levo od desne ivice */
+  padding: 10px 20px;
+  background-color: #ff6347; /* Možete promeniti boju */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
