@@ -37,7 +37,6 @@ const ForgottenPassword = () => {
   return (
     <div className="page-login">
       <div className="container-forgotten-password">
-        {/* Registration Form */}
         <div className="center-forgotten-password">
           <div className="right-side-forgotten-password">
             <a href="/" className="go-back" >Go back to login</a>

@@ -211,19 +211,19 @@
 
 .header {
   display: flex;
-  justify-content: center; /* Poravnavanje dugmadi levo */
-  gap: 10px; /* Razmak između dugmadi */
-  padding: 20px; /* Padding za prostor oko dugmadi */
+  justify-content: center; 
+  gap: 10px; 
+  padding: 20px; 
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.8); /* Pozadina sa providnošću ako je potrebno */
+  background: rgba(255, 255, 255, 0.8); 
 }
 
 .header button {
   padding: 10px 20px;
-  background-color: #007bff; /* Možete promeniti boju */
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -232,15 +232,15 @@
 }
 
 .header button:hover {
-  background-color: #0056b3; /* Tamnija nijansa boje pri hoveru */
+  background-color: #0056b3;
 }
 
 .logout-button {
   position: absolute;
-  top: 20px; /* Pomeranje malo ispod gornje ivice */
-  right: 20px; /* Pomeranje malo levo od desne ivice */
+  top: 20px; 
+  right: 20px; 
   padding: 10px 20px;
-  background-color: #ff6347; /* Možete promeniti boju */
+  background-color: #ff6347; 
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -262,7 +262,7 @@
 }
 
 .header-logout {
-  gap: 10px; /* Razmak između dugmadi */
+  gap: 10px; 
   position: absolute;
   top: 0;
   left: 0;
@@ -271,7 +271,7 @@
 
 .header-logout button {
   padding: 10px 20px;
-  background-color: #ff6347; /* Možete promeniti boju */
+  background-color: #ff6347;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -280,7 +280,7 @@
 }
 
 .header-logout button:hover {
-  background-color: #c74e39; /* Tamnija nijansa boje pri hoveru */
+  background-color: #c74e39; 
 }
 
 .table-container {
@@ -291,9 +291,9 @@
 .table thead {
   position: sticky;
   top: 0;
-  background-color: #343a40; /* Oboji pozadinu kao što je u tvojoj table-dark klasi */
-  color: white; /* Oboji tekst, ako je potrebno */
-  z-index: 1; /* Osigurava da zaglavlje bude iznad sadržaja */
+  background-color: #343a40;
+  color: white; 
+  z-index: 1;
 }
 
 .table-container-dugo {

@@ -37,7 +37,6 @@ const PageRegister = () => {
       const data = await response.json();
       console.log('User created:', data);
       window.location.href = '/'
-      // Možeš ovde dodati dodatne akcije, kao što su preusmeravanje ili prikaz poruke
     } catch (error) {
       console.error('There was a problem with the fetch operation:', error);
     }
@@ -50,7 +49,6 @@ const PageRegister = () => {
           <h1 className="heading">RestaurantAPI</h1>
           <p className="description">A simple restaurant API for managing different restaurants around the globe.</p>
         </div>
-        {/* Registration Form */}
         <div className="right-side">
           <div className="text-center">
             <a href="/" className="go-back" >Go back to login</a>
