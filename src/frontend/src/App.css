@@ -109,7 +109,7 @@
 }
 
 .create-account-button {
-  background-color: #42b72a;
+  background-color: #ff6347;
   color: #ffffff;
 }
 
@@ -245,4 +245,63 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.form-container {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+}
+
+.header-logout {
+  gap: 10px; /* Razmak između dugmadi */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header-logout button {
+  padding: 10px 20px;
+  background-color: #ff6347; /* Možete promeniti boju */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.header-logout button:hover {
+  background-color: #c74e39; /* Tamnija nijansa boje pri hoveru */
+}
+
+.table-container {
+  max-height: 355px;
+  overflow-y: auto;
+}
+
+.table thead {
+  position: sticky;
+  top: 0;
+  background-color: #343a40; /* Oboji pozadinu kao što je u tvojoj table-dark klasi */
+  color: white; /* Oboji tekst, ako je potrebno */
+  z-index: 1; /* Osigurava da zaglavlje bude iznad sadržaja */
+}
+
+.table-container-dugo {
+  max-height: 270px;
+  overflow-y: auto;
+}
+
+.table-container-dugo-dugo {
+  max-height: 200px;
+  overflow-y: auto;
 }

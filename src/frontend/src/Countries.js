@@ -85,7 +85,7 @@ function Countries() {
   }
 
   useEffect( () => {dohvatiCountries(); }, []);
-  //console.log(countries);
+  console.log(countries);
   return (
     <div className="container mt-3">
       <h2 onClick={toggleForm} className="btn btn-outline-primary" style={{ cursor: 'pointer', display: 'inline-block' }}>Unos Zemlje</h2>

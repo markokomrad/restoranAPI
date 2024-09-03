@@ -100,6 +100,8 @@ def inicijalni():
 
 # POCETAK METODA ZA WEB APLIKACIJU -------------------------------------------------
 
+# POCETAK Metoda za COUNTRY ----------------------------------------------------------
+
 # Format String za COUNTRY
 def formatSCountry(country: Country):
     return {
@@ -113,7 +115,9 @@ def formatSCountry(country: Country):
 def kreirajCountry():
     name = request.json['name']
     code = request.json['code']
-    
+    existing_country = Country.query.filter_by(code=code).first()
+    if existing_country:
+        return {"error": "Code already exists"}, 400
     country = Country(name, code)
     
     db.session.add(country)
@@ -158,6 +162,9 @@ def obrisiCountry(id):
     db.session.commit()
     return f"Country (id: {country.id}) obrisan."
 
+# KRAJ Metoda za COUNTRY ----------------------------------------------------
+
+# POCETAK Metoda za LOCATION ------------------------------------------------
 
 # Format String za LOCATION
 def formatSLocation(location: Location):
@@ -172,7 +179,6 @@ def formatSLocation(location: Location):
 def kreirajLocation():
     street = request.json['street']
     city = request.json['city']
-    
     location = Location(street, city)
     
     db.session.add(location)
@@ -216,6 +222,146 @@ def obrisiLocation(id):
     db.session.delete(location)
     db.session.commit()
     return f"Location (id: {location.id}) obrisan."
+
+# KRAJ Metoda za LOCATION -----------------------------------------------
+
+# POCETAK Metoda za RESTAURANT ------------------------------------
+
+# Format String za RESTAURANT
+def formatSRestaurant(restaurant: Restaurant):
+    return {
+        'id': restaurant.id,
+        'name': restaurant.name,
+        'telephone': restaurant.telephone,
+        'rating': restaurant.rating,
+    }
+
+# POST Metoda za RESTAURANT
+@app.route('/restaurant', methods = ['POST'])
+def kreirajRestaurant():
+    name = request.json['name']
+    telephone = request.json['telephone']
+    rating = request.json['rating']
+    existing_restaurant = Restaurant.query.filter_by(telephone=telephone).first()
+    if existing_restaurant:
+        return {"error": "Telephone number already exists"}, 400
+    restaurant = Restaurant(name, telephone, rating)
+    
+    db.session.add(restaurant)
+    db.session.commit()
+    return formatSRestaurant(restaurant)
+
+# GET Metoda za RESTAURANT
+@app.route('/restaurant', methods=['GET'])
+def dohvatiRestaurants():
+    restaurants = Restaurant.query.order_by(Restaurant.id.asc()).all()
+    listaRestaurants = [formatSRestaurant(s) for s in restaurants]
+    return {'restaurants': listaRestaurants}
+
+# GET by ID Metoda za RESTAURANT
+@app.route('/restaurant/<id>', methods=['GET'])
+def dohvatiRestaurant(id):
+    restaurant = Restaurant.query.filter_by(id=id).one()
+    return {
+        'restaurant': formatSRestaurant(restaurant=restaurant)
+    }
+
+# PUT Metoda za RESTAURANT
+@app.route("/restaurant/<id>", methods=['PUT'])
+def promeniRestaurant(id):
+    restaurant = Restaurant.query.filter_by(id=id)
+    name = request.json['name']
+    telephone = request.json['telephone']
+    rating = request.json['rating']
+    restaurant.update(
+        {
+            'name': name,
+            'telephone': telephone,
+            'rating': rating
+        }
+    )
+    db.session.commit()
+    return {'restaurant': formatSRestaurant(restaurant.one())}
+
+# DELETE Metoda za RESTAURANT
+@app.route("/restaurant/<id>", methods=['DELETE'])
+def obrisiRestaurant(id):
+    restaurant = Restaurant.query.filter_by(id=id).one()
+    db.session.delete(restaurant)
+    db.session.commit()
+    return f"Restaurant (id: {restaurant.id}) obrisan."
+
+# KRAJ Metoda za RESTAURANT --------------------------------------------------------
+
+# POCETAK Metoda za FOOD -----------------------------------------------------------
+
+# Format String za FOOD
+def formatSFood(food: Food):
+    return {
+        'id': food.id,
+        'name': food.name,
+        'price': food.price,
+        'rating': food.rating,
+        'ingredients': food.ingredients
+    }
+
+# POST Metoda za FOOD
+@app.route('/food', methods = ['POST'])
+def kreirajFood():
+    name = request.json['name']
+    price = request.json['price']
+    rating = request.json['rating']
+    ingredients = request.json['ingredients']
+    
+    food = Food(name, price, rating, ingredients)
+    
+    db.session.add(food)
+    db.session.commit()
+    return formatSFood(food)
+
+# GET Metoda za FOOD
+@app.route('/food', methods=['GET'])
+def dohvatiFoods():
+    foods = Food.query.order_by(Food.id.asc()).all()
+    listaFoods = [formatSFood(s) for s in foods]
+    return {'foods': listaFoods}
+
+# GET by ID Metoda za FOOD
+@app.route('/food/<id>', methods=['GET'])
+def dohvatiFood(id):
+    food = Food.query.filter_by(id=id).one()
+    return {
+        'food': formatSFood(food=food)
+    }
+
+# PUT Metoda za FOOD
+@app.route("/food/<id>", methods=['PUT'])
+def promeniFood(id):
+    food = Food.query.filter_by(id=id)
+    name = request.json['name']
+    price = request.json['price']
+    rating = request.json['rating']
+    ingredients = request.json['ingredients']
+    food.update(
+        {
+            'name': name,
+            'price': price,
+            'rating': rating,
+            'ingredients': ingredients
+        }
+    )
+    db.session.commit()
+    return {'food': formatSFood(food.one())}
+
+# DELETE Metoda za FOOD
+@app.route("/food/<id>", methods=['DELETE'])
+def obrisiFood(id):
+    food = Food.query.filter_by(id=id).one()
+    db.session.delete(food)
+    db.session.commit()
+    return f"Food (id: {food.id}) obrisan."
+
+# KRAJ Metoda za FOOD --------------------------------------------------------------
 
 # Format String za USER
 def formatSUser(user: User):
@@ -283,6 +429,7 @@ def logoutUser():
     user.logged = False
     db.session.commit()
     return {'message': 'User logged out successfully'}
+
 
 # KRAJ METODA ZA WEB APLIKACIJU ------------------------------------------------------------
 

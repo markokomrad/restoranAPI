@@ -18,7 +18,7 @@ function Locations() {
     postaviLocations(locations);
   }
 
-  const pokreniPromenu = (l) => {
+  const pokreniPromenuLocation = (l) => {
     postaviLocation(l);
     postaviLocationId(l.id);
     postaviMode('promena');
